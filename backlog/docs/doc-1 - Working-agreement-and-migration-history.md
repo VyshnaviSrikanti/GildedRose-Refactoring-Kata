@@ -1,3 +1,18 @@
+---
+id: doc-1
+title: Working agreement and migration history
+type: other
+created_date: '2026-10-28 10:42'
+updated_date: '2026-10-28 10:42'
+---
+# Current working agreement
+
+Interview stopped at the user request; proceed with implementation. Retain Java 8 source compatibility. Use one behavior-focused test class. Finish all existing-behavior validation tasks before production edits. Green tests plus review against requirements are the acceptance gate; red-first TDD is not mandatory for existing behavior. Run focused tests during changes and full suite before every implementation commit. Conjured is a separate feature. Keep Item and items unchanged. Work in java-kata, publish only to the user fork.
+
+TASK-1 through TASK-12 replace B01 through B12. TASK-13 through TASK-22 replace V01 through V10. The original checklist below is historical, not an active board.
+
+# Migration history
+
 # Gilded Rose Java backlog
 
 ## Working agreement
