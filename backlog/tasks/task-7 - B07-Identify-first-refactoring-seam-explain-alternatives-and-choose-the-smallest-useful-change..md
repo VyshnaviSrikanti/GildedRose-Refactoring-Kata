@@ -3,10 +3,11 @@ id: TASK-7
 title: >-
   B07: Identify first refactoring seam; explain alternatives and choose the
   smallest useful change.
-status: To Do
-assignee: []
+status: In Progress
+assignee:
+  - '@codex'
 created_date: '2026-10-28 10:42'
-updated_date: '2026-10-28 10:42'
+updated_date: '2026-10-28 10:43'
 labels:
   - workflow
 dependencies:
@@ -36,3 +37,9 @@ Migrated from the agreed Java kata workflow. Source: GildedRoseRequirements.md. 
 - [ ] #1 Identify first refactoring seam; explain alternatives and choose the smallest useful change.
 - [ ] #2 Record relevant evidence and test results in this task.
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+First replace repeated indexed access with a local Item reference and verify. Then extract named per-item update methods with centralized dispatch. Preserve Item/items and observable behavior; run the full suite before each commit.
+<!-- SECTION:PLAN:END -->

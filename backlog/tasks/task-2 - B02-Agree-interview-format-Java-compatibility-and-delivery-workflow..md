@@ -1,9 +1,10 @@
 ---
 id: TASK-2
 title: 'B02: Agree interview format, Java compatibility, and delivery workflow.'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-10-28 10:42'
+updated_date: '2026-10-28 10:43'
 labels:
   - workflow
 dependencies: []
@@ -20,6 +21,18 @@ Migrated from the agreed Java kata workflow. Source: GildedRoseRequirements.md. 
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Agree interview format, Java compatibility, and delivery workflow.
-- [ ] #2 Record relevant evidence and test results in this task.
+- [x] #1 Agree interview format, Java compatibility, and delivery workflow.
+- [x] #2 Record relevant evidence and test results in this task.
 <!-- AC:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+User ended interview and authorized execution. Preserve upstream Java 8 source target; small commits after full suite. See doc-1.
+<!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+User ended interview and authorized execution. Preserve upstream Java 8 source target; small commits after full suite. See doc-1.
+<!-- SECTION:FINAL_SUMMARY:END -->
