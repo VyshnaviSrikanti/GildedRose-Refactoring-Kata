@@ -105,6 +105,31 @@ class GildedRoseTest {
         assertDoesNotThrow(() -> new GildedRose(new Item[0]).updateQuality());
     }
 
+    // TASK-9/TASK-10: the new feature is separate from legacy characterization.
+    @ParameterizedTest
+    @CsvSource({"1,10,8", "0,10,6", "-1,10,6", "1,1,0", "0,3,0", "0,4,0", "1,0,0", "0,0,0"})
+    void conjuredItemsDegradeTwiceAsFast(int days, int quality, int expected) {
+        assertUpdate("Conjured Mana Cake", days, quality, days - 1, expected);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"Conjured,8", "Conjured Elixir,8", "Conjuredness,9", "conjured Mana Cake,9"})
+    void conjuredClassificationUsesAnExplicitNameBoundary(String name, int expected) {
+        assertUpdate(name, 1, 10, 0, expected);
+    }
+
+    @Test
+    void conjuredItemsAgeOncePerDayInAMixedInventory() {
+        Item ordinary = new Item("ordinary", 1, 10);
+        Item conjured = new Item("Conjured Mana Cake", 1, 10);
+        GildedRose shop = new GildedRose(new Item[]{ordinary, conjured});
+        for (int day = 0; day < 3; day++) shop.updateQuality();
+        assertAll(() -> assertEquals(-2, ordinary.sellIn),
+            () -> assertEquals(-2, conjured.sellIn),
+            () -> assertEquals(5, ordinary.quality),
+            () -> assertEquals(0, conjured.quality));
+    }
+
     private void assertUpdate(String name, int days, int quality, int nextDays, int nextQuality) {
         Item item = new Item(name, days, quality);
         new GildedRose(new Item[]{item}).updateQuality();

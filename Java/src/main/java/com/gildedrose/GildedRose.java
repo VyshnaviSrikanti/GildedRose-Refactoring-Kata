@@ -29,7 +29,8 @@ class GildedRose {
                 updateBackstagePass(item);
                 break;
             default:
-                updateOrdinaryItem(item);
+                int dailyDecay = isConjured(item.name) ? 2 : 1;
+                updateDegradingItem(item, dailyDecay);
         }
     }
 
@@ -55,11 +56,15 @@ class GildedRose {
         }
     }
 
-    private void updateOrdinaryItem(Item item) {
-        decreaseQuality(item);
+    private boolean isConjured(String name) {
+        return name.equals("Conjured") || name.startsWith("Conjured ");
+    }
+
+    private void updateDegradingItem(Item item, int dailyDecay) {
+        decreaseQuality(item, dailyDecay);
         item.sellIn--;
         if (item.sellIn < 0) {
-            decreaseQuality(item);
+            decreaseQuality(item, dailyDecay);
         }
     }
 
@@ -69,9 +74,9 @@ class GildedRose {
         }
     }
 
-    private void decreaseQuality(Item item) {
+    private void decreaseQuality(Item item, int amount) {
         if (item.quality > 0) {
-            item.quality--;
+            item.quality = Math.max(0, item.quality - amount);
         }
     }
 }
