@@ -41,3 +41,9 @@ Migrated from the agreed Java kata workflow. Source: GildedRoseRequirements.md. 
 <!-- SECTION:PLAN:BEGIN -->
 First replace repeated indexed access with a local Item reference and verify. Then extract named per-item update methods with centralized dispatch. Preserve Item/items and observable behavior; run the full suite before each commit.
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Step 1: local Item reference, 47 tests pass.
+<!-- SECTION:NOTES:END -->
