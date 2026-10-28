@@ -44,6 +44,35 @@ and the items property unchanged as required by the kata.
 
 ## Decisions and evidence
 
+- User decision: complete and accept every existing-business-case validation task
+  before changing any production code. Refactoring starts only after this gate.
+- Each business case gets its own task, mapped to requirements and linked tests.
+  Acceptance requires reviewing that test setup and assertions match the requirement
+  and that the tests pass against unchanged production code.
+- Red-first TDD is not required for validating existing working behavior. Conjured
+  is a new feature and will be handled separately after the validation gate.
+- Discussion focuses on engineering approach, not quizzes about business rules.
 - No production changes made in this fork yet.
 - Upstream Java test is an intentional placeholder: expects name "fixme" from item "foo".
 - Existing standalone gilded-rose-java repository is separate from this exercise.
+
+## Existing behavior validation gate
+
+All tasks below must be accepted before B07/B08. Each task must record test
+method names and execution evidence when implemented. No task is accepted yet.
+
+- [ ] V01: Ordinary items lose quality and sellIn each day; verify expiry boundary and accelerated decay.
+- [ ] V02: Ordinary item quality never falls below zero, including after expiry.
+- [ ] V03: Aged Brie gains quality; characterize the existing expired-item rate.
+- [ ] V04: Aged Brie never increases above 50, including near the cap and after expiry.
+- [ ] V05: Sulfuras retains quality 80 and sellIn before, at, and after expiry.
+- [ ] V06: Backstage passes gain quality across both threshold boundaries.
+- [ ] V07: Backstage passes never increase above 50.
+- [ ] V08: Backstage passes drop to zero after the concert; verify expiry boundary.
+- [ ] V09: Names are preserved, unknown names use ordinary behavior, and updates mutate the supplied items.
+- [ ] V10: Mixed inventories, repeated daily updates, and empty inventory behave consistently.
+
+V09/V10 are compatibility checks in addition to the explicit business rules.
+Conjured acceptance tests are tracked by B09/B10 and do not block the existing
+behavior validation gate. A requirement/implementation discrepancy is recorded
+for discussion rather than silently fixed during validation.
