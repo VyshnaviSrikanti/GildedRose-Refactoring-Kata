@@ -1,11 +1,11 @@
 ---
 id: TASK-8
 title: 'B08: Refactor incrementally with tests and a commit at each coherent step.'
-status: In Progress
+status: Done
 assignee:
   - '@codex'
 created_date: '2026-10-28 10:42'
-updated_date: '2026-10-28 10:43'
+updated_date: '2026-10-28 10:44'
 labels:
   - workflow
 dependencies:
@@ -32,8 +32,8 @@ Migrated from the agreed Java kata workflow. Source: GildedRoseRequirements.md. 
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Refactor incrementally with tests and a commit at each coherent step.
-- [ ] #2 Record relevant evidence and test results in this task.
+- [x] #1 Refactor incrementally with tests and a commit at each coherent step.
+- [x] #2 Record relevant evidence and test results in this task.
 <!-- AC:END -->
 
 ## Implementation Plan
@@ -46,4 +46,12 @@ First replace repeated indexed access with a local Item reference and verify. Th
 
 <!-- SECTION:NOTES:BEGIN -->
 Step 1: local Item reference, 47 tests pass.
+
+Step 2: named per-category methods and centralized name dispatch; 47 tests pass. Differential check: 262440 daily states match upstream. Item/items unchanged.
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Two refactoring steps preserve behavior; full suite passes and upstream comparison matches.
+<!-- SECTION:FINAL_SUMMARY:END -->
